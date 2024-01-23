@@ -1,40 +1,29 @@
-const express = require('express')
+import express from "express";
+import { engine } from "express-handlebars";
+import { loadMovie, loadMovies } from "./src/movies.js";
 
-const app = express()
+const app = express();
 
-app.use(express.static('public'))
-app.use(express.urlencoded({extended: true}))
-app.use(express.json())
+app.use(express.static("public"));
 
-app.set('view engine', 'handlebars')
-
-app.use(logger)
+app.engine("handlebars", engine());
+app.set("view engine", "handlebars");
+app.set("views", "./templates");
 
 
-app.get('/about', (req, res) => {
-    res.sendFile(__dirname + "/public/about.html");
-});
-app.get('/agelimit', (req, res) => {
-    res.sendFile(__dirname + "/public/age-limit.html");
-});
-app.get('/contact', (req, res) => {
-    res.sendFile(__dirname + "/public/contact.html");
-});
-app.get('/movies', (req, res) => {
-    res.sendFile(__dirname + "/public/movies.html");
-});
-app.get('/news', (req, res) => {
-    res.sendFile(__dirname + "/public/news.html");
-});
-app.get('/questions', (req, res) => {
-    res.sendFile(__dirname + "/public/QandA.html");
+
+app.get("/", async (request, response) => {
+const movies = await loadMovies();
+res.render("home", { movies });
 });
 
-function logger(req, res, next){
-console.log(req.originalUrl)
-next()
-}
+app.get("/movies/:movieId", async (request, response) =>{
+    const movie = await loadMovie(req,params,movieId);
+    res.render("movie", { movie });
+});
 
 
 
-app.listen(5080)
+app.use("/static", express.static("./static"));
+
+app.listen(5080);

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:title" content="Tidaholms biohörna" />
+  <meta property="og:site_name" content="Tidaholms biohörna" />
+  <meta property="og:url" content="" />
+  <meta property="og:description" content="Tidaholms biohörna, where you can take a break from the reality and go
+    inside a dark room to enter a different and exciting world." />
+  <meta property="og:type" content="website" />
+  <!--Set color for the address bar-->
+  <meta name="theme-color" content="#0B712F" />
+  <title>Tidaholms biohörna</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <script src="main.js" defer></script>
+  <script src="data.js" defer></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <link rel="stylesheet" href="main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<!-- nav__map needs to be modied to link directly to the anchor point-->
+<header>
+  <nav>
+    <div onclick="showNave__hamburger()" class="nav__hamburger" id="grid-box">
+      <input type="checkbox" id="checkbox" class="checkbox hidden" />
+      <label for="checkbox">
+        <div class="hamburger">
+          <div class="bar bar1" onclick="toggleNave__hamburger()"></div>
+          <div class="bar bar2" onclick="toggleNave__hamburger()"></div>
+          <div class="bar bar3" onclick="toggleNave__hamburger()"></div>
+        </div>
+      </label>
+    </div>
+    <div class="nav__links-hamburger">
+      <ul>
+        <li><a href="about.html">Biljetter</a></li>
+        <li><a href="news.html">Nyheter</a></li>
+        <li><a href="movies.html">Film och trailers</a></li>
+        <li><a href="about.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="nav__homepage">
+      <a href="index.html"><i class="fa-regular fa-square"></i></a>
+    </div>
+    <div id="logo"><img src="media/logoCinema.png" width="250px" height="40px"></div>
+    <!-- These links need anchors to the correct parts of about.html-->
+    <div class="nav__links">
+      <ul>
+        <li><a href="about.html">Biljetter</a></li>
+        <li><a href="news.html">Nyheter</a></li>
+        <li><a href="movies.html">Film och trailers</a></li>
+        <li><a href="about.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <!-- nav__map needs to be modied to link directly to the anchor point
+    that is displaying the map on about.html -->
+    <div class="nav__map">
+      <a href="about.html"><i class="fa-solid fa-location-dot"></i></a>
+    </div>
+    <div class="nav__searchbar">
+      <i id="navsearch" class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    <!-- the serachbox content need to be added to filter upon entering -->
+    <div id="searchbox" class="searchbox__container">
+      <input type="text" placeholder="Sök efter filmer..." />
+      <div id="closeInput" class="closeInput">
+        <i class="fa-solid fa-x"></i>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="everything-box">
+  <div class="img-box">
+    <img class="everything-box-img"
+      src="https://catalog.cinema-api.com/cf/images/ncg-images/df705f0dcda848d4ac6b1b2308cb6390.jpg"
+      alt="Ett sista race poster" width="100%" height="100%">
+
+    <div class="text-div">
+      <p>På bio nu</p>
+      <a href="movies.html">Ett sista race</a>
+      <!--Needs the right refernse example https://www.filmstaden.se/film/NCG273278/ett-sista-race -->
+      <div class="play-button" id="play-button">
+      </div>
+      <div class="container">
+        <div class="clip">
+          <div class="close-btn"><i class="bi bi-x-lg">X</i></div>
+          <iframe id="iframe" width="100%" height="100%"
+            src="ETT SISTA RACE - Officiell Trailer - Biopremiär på juldagen!.mp4" autoplay="0"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<main>
+  <!----------------------------TOPPLISTA START --------------------------->
+  <h1 class="movie__headers">Topplistan</h1>
+  <div class="movie__wrapper">
+    <div id="movieContainer1" class="movieContainer"></div>
+  </div>
+  <!----------------------------FILMREKLAM START -------------------------->
+  <article class="filmAdvertising" align="center">
+    <iframe width="1000" height="315" src="https://www.youtube.com/embed/DCtjeTmJhYs?si=cbZ63StJYYydfSJU&amp;controls=0"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <h2>Hammarskjöld</h2>
+    <h3>Premiär 25 december</h3>
+  </article>
+  <!----------------------------FILMREKLAM END ---------------------------->
+
+  <!----------------------------TOPPLISTA START --------------------------->
+
+
+  <!----------------------------TOPPLISTA END ----------------------------->
+
+  <!----------------------------FILMREKLAM START -------------------------->
+
+  <!----------------------------FILMREKLAM END ---------------------------->
+
+
+  <!----------------------------KOMMANDE START ----------------------------->
+  <h1 class="movie__headers">Kommande filmer</h1>
+  <div class="movie__wrapper">
+    <div id="movieContainer2" class="movieContainer"></div>
+  </div>
+  <!----------------------------KOMMANDE END ------------------------------->
+
+  <!----------------------------TEXT IMAGE BOXES START ----------------------------->
+
+  <!----------------------------TEXT IMAGE BOXES END ----------------------------->
+
+
+  <!----------------------------KOMMANDE START ----------------------------->
+
+  <!----------------------------KOMMANDE END ------------------------------->
+
+  <!----------------------------NYHETER START ----------------------------->
+  <!----------------------------NYHETER END ----------------------------->
+</main>
+<!--FOOTER START-->
+<footer>
+  <div class="dropdown footerSections">
+    <button class="dropbtn">Gäster & Hjälp</button>
+    <div class="dropdown-content">
+      <a href="movies.html">Filmer</a>
+      <a href="news.html">Nyheter</a>
+      <a href="about.html">Om oss</a>
+      <a href="about.html">Kontakt</a>
+      <a href="QandA.html">Frågor och Svar</a>
+    </div>
+  </div>
+  <div id="footerDesktop">
+    <section>
+      <h4>Gäster</h4>
+      <a href="movies.html">Filmer</a>
+      <a href="news.html">Nyheter</a>
+      <a href="age-limit.html">Åldergränser</a>
+    </section>
+    <section>
+      <h4>Hjälp och Kontakt</h4>
+      <a href="about.html">Om oss</a>
+      <a href="about.html">Kontakt</a>
+      <a href="QandA.html">Frågor och Svar</a>
+    </section>
+  </div>
+</footer>
+
+</html>

@@ -1,4 +1,4 @@
-const express = require('express')
+import express from 'express';
 const app = express()
 
 app.use(express.static("static"))
@@ -9,13 +9,10 @@ app.set("view engine", "ejs")
 app.use(logger)
 
 
-
-const userRouter = require("./routes/users")
-
-/* Gör att router sidan använder 
-path /users och sen tillför allt från userRoutes*/ 
-app.use("/users", userRouter)
-
+app.get('/about', (req, res) => 
+{
+    res.send();
+})
 
 function logger(req, res, next){
 console.log(req.originalUrl)

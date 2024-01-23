@@ -1,7 +1,9 @@
 {
   "name": "express-mikaela-kino",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "nodemon server.js"
   },
@@ -15,5 +17,4 @@
     "node-fetch": "^3.3.2",
     "nodemon": "^3.0.2"
   },
-  "description": ""
 }

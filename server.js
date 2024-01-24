@@ -1,15 +1,14 @@
 import express from "express";
 import { engine } from "express-handlebars";
-import { loadMovie, loadMovies} from "./src/movies.js";
+import { loadMovie, loadMovies } from "./src/movies.js";
 
 const app = express();
 
-app.use(express.static("public"));
+app.use(express.static("public")); 
 
 app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
 app.set("views", "./templates");
-
 
 
 app.get("/home", async (req, res) => {
@@ -23,7 +22,9 @@ app.get("/movies/:movieId", async (req, res) =>{
 });
 
 
-
 app.use("/static", express.static("./static"));
+
+
+
 
 app.listen(5080);

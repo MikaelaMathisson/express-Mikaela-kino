@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
 
-const API_BASE = 'https://plankton-app-xhkom.ondigitalocean.app/api/movies';
+export const API_BASE = 'https://plankton-app-xhkom.ondigitalocean.app/api/movies';
 
 export async function loadMovies() {
     const res = await fetch(API_BASE + '/movies');

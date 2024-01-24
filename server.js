@@ -1,6 +1,6 @@
 import express from "express";
 import { engine } from "express-handlebars";
-import { loadMovie, loadMovies } from "./src/movies.js";
+import { loadMovie, loadMovies} from "./src/movies.js";
 
 const app = express();
 
@@ -12,12 +12,12 @@ app.set("views", "./templates");
 
 
 
-app.get("/", async (request, response) => {
+app.get("/home", async (req, res) => {
 const movies = await loadMovies();
 res.render("home", { movies });
 });
 
-app.get("/movies/:movieId", async (request, response) =>{
+app.get("/movies/:movieId", async (req, res) =>{
     const movie = await loadMovie(req,params,movieId);
     res.render("movie", { movie });
 });

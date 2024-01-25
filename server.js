@@ -16,8 +16,8 @@ res.render("home", { movies });
 });
 
 app.get("/movies/:movieId", async (req, res) => {
-    const movie = await loadMovie(req, params, movieId);
-    res.render("movie", { movie });
+  const movie = await loadMovie(req.params.movieId);
+  res.render("movie", { movie });
 });
 
 

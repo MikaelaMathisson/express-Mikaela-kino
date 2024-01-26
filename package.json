@@ -8,7 +8,6 @@
     "start": "nodemon server.js",
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
